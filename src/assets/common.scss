@@ -1,0 +1,58 @@
+@each $i in 0, 4, 5, 8, 10, 12, 16, 20, 24, 30, 36, 48 {
+  .ml-#{$i} {
+    margin-left: $i * 1px;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 1px;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * 1px;
+  }
+  .mt-#{$i} {
+    margin-top: $i * 1px;
+  }
+  .mlr-#{$i} {
+    margin-left: $i * 1px;
+    margin-right: $i * 1px;
+  }
+  .mtb-#{$i} {
+    margin-top: $i * 1px;
+    margin-bottom: $i * 1px;
+  }
+  .pl-#{$i} {
+    padding-left: $i * 1px;
+  }
+  .pr-#{$i} {
+    padding-right: $i * 1px;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i * 1px;
+  }
+  .pt-#{$i} {
+    padding-top: $i * 1px;
+  }
+  .ptb-#{$i} {
+    padding-top: $i * 1px;
+    padding-bottom: $i * 1px;
+  }
+  .plr-#{$i} {
+    padding-left: $i * 1px;
+    padding-right: $i * 1px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.flex-full {
+  @extend .flex;
+  justify-content: space-between;
+}
+.flex-c {
+  @extend .flex;
+  align-items: center;
+}
+.flex-full-c {
+  @extend .flex-full;
+  align-items: center;
+}
