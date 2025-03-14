@@ -121,9 +121,6 @@ function createWave() {
       });
     });
     wavesurfer.on('interaction', () => {
-      console.log('交互');
-      // wavesurfer?.playPause();
-      // isPaused.value = !isPaused.value;
       toggleAudio();
     });
     wavesurfer.on('timeupdate', (time) => {

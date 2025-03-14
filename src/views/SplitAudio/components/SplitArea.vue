@@ -96,8 +96,8 @@
 <script setup lang="ts">
 import type { SplitAreaInfo, TimeInfo } from '../types';
 import type { ElButton } from 'element-plus';
-// @ts-ignore
-import RegionsPlugin, { Region } from 'wavesurfer.js/dist/plugins/regions.d.ts';
+import RegionsPlugin from 'wavesurfer.js/dist/plugins/regions.esm.js';
+import type { Region } from 'wavesurfer.js/dist/plugins/regions.d.ts';
 import WaveSurfer from 'wavesurfer.js';
 
 import { timeInfoToStamp, getTimeInfo } from '../utils';
@@ -183,11 +183,7 @@ function addSplitArea() {
   }
 }
 // 输入时间校验
-function inputValidate(
-  isStart: boolean,
-  type: keyof TimeInfo,
-  index: number
-) {
+function inputValidate(isStart: boolean, type: keyof TimeInfo, index: number) {
   const item = splitAreaList[index];
   if (item) {
     const timeKey = isStart ? 'startTimeInfo' : 'endTimeInfo';
@@ -249,7 +245,7 @@ async function getBlobByTime(startTime: number, endTime: number) {
 async function handleExport(startTime: number, endTime: number, key: number) {
   const blob = await getBlobByTime(startTime, endTime);
   if (blob) {
-    saveAs(blob, `${props.fileName + (key + 1)}.wav`)
+    saveAs(blob, `${props.fileName + (key + 1)}.wav`);
   }
 }
 // 批量下载
