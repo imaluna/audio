@@ -1,10 +1,10 @@
 /**
- * @function bufferToWave
+ * @function bufferToWav
  * @description 将 AudioBuffer 转换为 Blob
  * @param {AudioBuffer} audioBuffer
  * @param {number} len
  */
-export function bufferToWave(audioBuffer: AudioBuffer, len: number): Blob {
+export function bufferToWav(audioBuffer: AudioBuffer, len: number): Blob {
   let numOfChan = audioBuffer.numberOfChannels,
     length = len * numOfChan * 2 + 44,
     buffer = new ArrayBuffer(length),

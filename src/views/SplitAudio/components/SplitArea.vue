@@ -102,7 +102,7 @@ import WaveSurfer from 'wavesurfer.js';
 
 import { timeInfoToStamp, getTimeInfo } from '../utils';
 import { randomColor } from '@/utils/index';
-import { bufferToWave, toAudioBuffer } from '@/utils/audio';
+import { bufferToWav, toAudioBuffer } from '@/utils/audio';
 import { Download } from '@element-plus/icons-vue';
 import deepClone from 'lodash.clonedeep';
 import { saveAs } from 'file-saver';
@@ -239,7 +239,7 @@ async function getBlobByTime(startTime: number, endTime: number) {
     startTime,
     endTime
   );
-  return bufferToWave(audioBuffer, frameCount);
+  return bufferToWav(audioBuffer, frameCount);
 }
 // 下载/导出单个音频
 async function handleExport(startTime: number, endTime: number, key: number) {
@@ -318,6 +318,5 @@ onMounted(() => {
     }
     cacheSplitAreaList();
   });
-  regions.on('region-out', (region) => {});
 });
 </script>
